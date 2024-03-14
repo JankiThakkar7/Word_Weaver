@@ -13,6 +13,10 @@ export default function TextForm(props) {
     setText(newText);
   }
 
+  const handleClearClick = () => {
+    setText("");
+  }
+
   const handleOnChange = (event) => {
     console.log("On Change");
     setText(event.target.value);
@@ -29,15 +33,18 @@ export default function TextForm(props) {
             value={text}
             onChange={handleOnChange}
             id="myBox"
-            rows="10"
+            rows="8"
             placeholder="Enter text here"
           ></textarea>
         </div>
         <button className="btn btn-primary me-3" onClick={handleUpClick}>
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary" onClick={handleLoClick}>
+        <button className="btn btn-primary me-3" onClick={handleLoClick}>
           Convert to LowerCase
+        </button>
+        <button className="btn btn-primary" onClick={handleClearClick}>
+          Clear Text
         </button>
       </div>
       <div className="conatiner my-3">
